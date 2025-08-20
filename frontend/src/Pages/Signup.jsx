@@ -15,7 +15,7 @@ function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/signup', {
+      const response = await axios.post(`${process.env.API}/auth/signup`, {
         email,
         firstname,
         lastname,

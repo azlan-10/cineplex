@@ -13,7 +13,7 @@ function Landing() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`http://localhost:3000/api/movies/lolo?search=${search}`);
+      const res = await axios.get(`${process.env.API}/movies/lolo?search=${search}`);
       if (res.data && res.data.Search) {
         setMovies(res.data.Search);
         setError("");
@@ -57,7 +57,7 @@ function Landing() {
         </div>
       </div>
 
-      {/* Search Bar */}
+    
       <form onSubmit={handleSearch} className="flex flex-col sm:flex-row justify-center items-center mb-8 w-full gap-4 sm:gap-0">
         <input
           type="text"
@@ -74,12 +74,12 @@ function Landing() {
         </button>
       </form>
 
-      {/* Error Message */}
+     
       {error && (
         <p className="text-center text-red-400 font-medium mb-6">{error}</p>
       )}
 
-      {/* Movie List */}
+      
       {movies.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
           {movies.map((movie, idx) => (

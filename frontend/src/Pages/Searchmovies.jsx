@@ -15,7 +15,7 @@ export default function MovieSearch() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        `http://localhost:3000/api/movies/search?search=${search}`,
+        `${process.env.API}/movies/search?search=${search}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -36,7 +36,7 @@ export default function MovieSearch() {
       if (!token) return alert("⚠️ Please login first!");
 
       await axios.post(
-        "http://localhost:3000/api/movies/favourite",
+        `${process.env.API}/movies/favourite`,
         {
           title: movie.Title ?? movie.title,
           year: movie.Year ?? movie.year,

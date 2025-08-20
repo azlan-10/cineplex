@@ -7,7 +7,7 @@ function Movies() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/movies/lolo?search=2024&page=${page}`)
+    axios.get(`${process.env.API}/movies/lolo?search=2024&page=${page}`)
       .then((response) => {
         setMovies(prevMovies => [...prevMovies, ...response.data.Search]);
         setAllMovies(response.data.totalResults);
@@ -19,14 +19,14 @@ function Movies() {
 
   return (
     <div className="px-4 sm:px-6 lg:px-10 py-6">
-      {/* Movie Grid */}
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {movies.map((movie, idx) => (
           <Ok key={idx} mov={movie} />
         ))}
       </div>
 
-      {/* See More Button */}
+     
       <div className="flex justify-center items-center mt-6">
         <button
           onClick={() => setPage(page + 1)}
