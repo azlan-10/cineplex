@@ -15,7 +15,7 @@ export default function MovieSearch() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        `${process.env.API}/movies/search?search=${search}`,
+        `https://cineplex-xxcw.onrender.com/api/movies/search?search=${search}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -36,7 +36,7 @@ export default function MovieSearch() {
       if (!token) return alert("⚠️ Please login first!");
 
       await axios.post(
-        `${process.env.API}/movies/favourite`,
+        `https://cineplex-xxcw.onrender.com/api/movies/favourite`,
         {
           title: movie.Title ?? movie.title,
           year: movie.Year ?? movie.year,

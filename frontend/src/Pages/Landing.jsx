@@ -13,7 +13,7 @@ function Landing() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`${process.env.API}/movies/lolo?search=${search}`);
+      const res = await axios.get(`https://cineplex-xxcw.onrender.com/api/movies/lolo?search=${search}`);
       if (res.data && res.data.Search) {
         setMovies(res.data.Search);
         setError("");

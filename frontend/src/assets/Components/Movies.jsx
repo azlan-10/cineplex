@@ -7,7 +7,7 @@ function Movies() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    axios.get(`${process.env.API}/movies/lolo?search=2024&page=${page}`)
+    axios.get(`https://cineplex-xxcw.onrender.com/api/movies/lolo?search=2024&page=${page}`)
       .then((response) => {
         setMovies(prevMovies => [...prevMovies, ...response.data.Search]);
         setAllMovies(response.data.totalResults);

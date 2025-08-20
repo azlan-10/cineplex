@@ -9,7 +9,7 @@ function Favourite() {
     const getFav = async () => {
       try {
         const res = await axios.get(
-          `${process.env.API}/movies/favourite`,
+          `https://cineplex-xxcw.onrender.com/api/movies/favourite`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -25,7 +25,7 @@ function Favourite() {
   const removeFavourite = async (IMDbid) => {
     try {
       await axios.delete(
-        `${process.env.API}/movies/removefavourite`,
+        `https://cineplex-xxcw.onrender.com/api/movies/removefavourite`,
         {
           headers: { Authorization: `Bearer ${token}` },
           data: { IMDbid }, 

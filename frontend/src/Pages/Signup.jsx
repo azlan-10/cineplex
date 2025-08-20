@@ -15,7 +15,7 @@ function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post(`${process.env.API}/auth/signup`, {
+      const response = await axios.post(`https://cineplex-xxcw.onrender.com/api/auth/signup`, {
         email,
         firstname,
         lastname,

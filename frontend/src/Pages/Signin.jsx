@@ -12,7 +12,7 @@ function Signin() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(`${process.env.API}/auth/login`, {
+      const res = await axios.post(`https://cineplex-xxcw.onrender.com/api/auth/login`, {
         email,
         password
       });
