@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Movies from '../assets/Components/movies';
+import Movies from '../assets/Components/Movies';
 import OkMovie from '../assets/Components/okmovie';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
