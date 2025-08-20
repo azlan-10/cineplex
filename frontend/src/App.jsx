@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Signup from './Pages/Signup'
-import Landing from './Pages/landing'
+import Landing from './Pages/Landing'
 import Signin from './Pages/Signin'
 import Searchmovies from './Pages/Searchmovies'
 import Favourite from './Pages/Favourite'
